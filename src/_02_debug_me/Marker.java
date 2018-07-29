@@ -2,26 +2,39 @@
 
 package _02_debug_me;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
+
 class Marker 
 { 
     public Marker() 
     { 
         // no initialisation to do 
     } 
+   
 
-    public void printGrade(int mark) 
+    public String printGrade(int mark) 
     { 
         if (mark >= 85) 
-            System.out.println("High Distinction"); 
+            return "High Distinction";
         if (mark >= 75) 
-            System.out.println("Distinction"); 
+            return "Distinction";
         if (mark >= 65) 
-            System.out.println("Credit"); 
+           return "Credit";
         if (mark >= 50) 
-            System.out.println("Pass"); 
+            return "Pass";
         if (mark >= 45) 
-            System.out.println("Concessional Pass"); 
-        if (mark < 45) 
-            System.out.println("Fail"); 
+            return "Concessional Pass";
+        else
+            return "Fail";
     } 
+    @Test
+	void test() {
+    	 Marker mark = new Marker();
+		assertEquals("High Distinction", mark.printGrade(85));
+		
+	}
+
 } 

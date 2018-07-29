@@ -2,6 +2,11 @@
 
 package _02_debug_me;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
+
 class Person 
 { 
   // Instance variables 
@@ -11,8 +16,8 @@ class Person
   // Constructor 
     public Person(String _name, int _age) 
     { 
-        String name = _name; 
-        int age = _age; 
+        this.name = _name; 
+        this.age = _age;
     } 
 
   // Instance methods 
@@ -25,4 +30,6 @@ class Person
     { 
         return age; 
     } 
+
+   
 } 
